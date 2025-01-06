@@ -31,7 +31,7 @@ const SkillsSection = () => {
 
   return (
     <section className="py-10">
-      <div className="max-w-5xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6">
+      <div className="max-w-5xl mx-auto px-6 grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
         {skills.map((skill) => (
           <div
             key={skill.name}

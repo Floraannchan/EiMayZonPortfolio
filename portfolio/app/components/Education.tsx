@@ -4,7 +4,6 @@ import { useRef } from "react";
 import Image from "next/image";
 import FlipLink from "../TextDeco/page";
 import { motion, useTransform, useScroll } from "framer-motion";
-import Projects from "../Projects/page";
 
 interface EducationItem {
   id: number;
@@ -150,9 +149,6 @@ export default function Education() {
           </div>
           {educationData.map((item, index) => renderEducationItem(item, index))}
         </div>
-      </div>
-      <div>
-        <Projects />
       </div>
     </div>
   );
