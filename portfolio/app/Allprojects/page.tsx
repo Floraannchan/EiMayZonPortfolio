@@ -12,15 +12,22 @@ import {
 } from "react-icons/si";
 import { FaArrowLeft } from "react-icons/fa";
 import { useRouter } from "next/navigation";
+import { motion } from "framer-motion";
+import { fadeIn } from "../variants";
 
 export default function Allprojects() {
   const router = useRouter();
   const handleClickToHome = () => {
-    router.push("http://localhost:3000");
+    router.push("/Home");
   };
   return (
     <div>
-      <div className="flex  items-center p-8">
+      <motion.div
+        className="flex  items-center p-8"
+        variants={fadeIn("down", 0.5)}
+        initial="hidden"
+        whileInView="show"
+      >
         <button onClick={handleClickToHome}>
           <FaArrowLeft className="text-black sm:text-3xl md:text-3xl lg:text-4xl " />
         </button>
@@ -28,9 +35,14 @@ export default function Allprojects() {
         <h1 className="font-jacques text-secondary m-auto">
           <FlipLink>Projects</FlipLink>
         </h1>
-      </div>
+      </motion.div>
 
-      <div className="bg-primary w-full  flex justify-center items-center gap-16 flex-col md:flex-row p-16">
+      <motion.div
+        className="bg-primary w-full  flex justify-center items-center gap-16 flex-col md:flex-row p-16"
+        variants={fadeIn("right", 0.5)}
+        initial="hidden"
+        whileInView="show"
+      >
         <div>
           <Image
             src="/images/ResumeProject.png"
@@ -59,8 +71,13 @@ export default function Allprojects() {
             See More
           </button>
         </div>
-      </div>
-      <div className="bg-secondary w-full  flex justify-center items-center gap-16 flex-col md:flex-row-reverse p-16">
+      </motion.div>
+      <motion.div
+        className="bg-secondary w-full  flex justify-center items-center gap-16 flex-col md:flex-row-reverse p-16 "
+        variants={fadeIn("left", 0.5)}
+        initial="hidden"
+        whileInView="show"
+      >
         <div>
           <Image
             src="/images/Ebook.png"
@@ -90,8 +107,13 @@ export default function Allprojects() {
             See More
           </button>
         </div>
-      </div>
-      <div className="bg-text_primay w-full  flex justify-center items-center gap-16 flex-col md:flex-row p-16">
+      </motion.div>
+      <motion.div
+        className="bg-text_primay w-full  flex justify-center items-center gap-16 flex-col md:flex-row p-16"
+        variants={fadeIn("right", 0.5)}
+        initial="hidden"
+        whileInView="show"
+      >
         <div>
           <Image
             src="/images/businessPage.png"
@@ -122,7 +144,7 @@ export default function Allprojects() {
             See More
           </button>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 }

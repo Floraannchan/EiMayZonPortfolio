@@ -5,6 +5,7 @@ import Image from "next/image";
 import FlipLink from "../TextDeco/page";
 import { motion, useTransform, useScroll } from "framer-motion";
 import Projects from "../projects/page";
+import { fadeIn } from "../variants";
 
 interface EducationItem {
   id: number;
@@ -82,6 +83,7 @@ export default function Education() {
     },
   ];
 
+  // Move useTransform to the top level
   const scaleValues = educationData.map((item) =>
     useTransform(scrollYProgress, item.scaleRange, item.scaleOutput)
   );
@@ -144,9 +146,14 @@ export default function Education() {
       <div className="container">
         <div className="flex gap-8 flex-col">
           <div className="sticky top-0 h-screen">
-            <h1 className="font-jacques text-secondary">
+            <motion.h1
+              className="font-jacques text-secondary"
+              variants={fadeIn("right", 0.5)}
+              initial="hidden"
+              whileInView="show"
+            >
               <FlipLink>EDUCATION</FlipLink>
-            </h1>
+            </motion.h1>
           </div>
           {educationData.map((item, index) => renderEducationItem(item, index))}
         </div>

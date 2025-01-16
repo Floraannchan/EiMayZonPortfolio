@@ -43,7 +43,7 @@ export default function NavBar() {
 
         {/* Desktop Navigation Buttons */}
         <div className="hidden md:flex w-[160px] h-[50px] bg-foreground rounded-full justify-around items-center">
-          <Link href="http://localhost:3000/">
+          <Link href="/components/Home">
             <button
               className={`text-white text-[20px] px-4 py-1.5 rounded-full ${
                 activeButton === "info" ? "bg-primary" : ""
@@ -53,17 +53,15 @@ export default function NavBar() {
               Info
             </button>
           </Link>
-          <Link href="/Allprojects">
-            {" "}
-            <button
-              className={`text-white text-[20px] px-4 py-1.5 rounded-full ${
-                activeButton === "work" ? "bg-primary" : ""
-              }`}
-              onClick={() => setActiveButton("work")}
-            >
-              Work
-            </button>
-          </Link>
+          <Link href="/allprojects"></Link>
+          <button
+            className={`text-white text-[20px] px-4 py-1.5 rounded-full ${
+              activeButton === "work" ? "bg-primary" : ""
+            }`}
+            onClick={() => setActiveButton("work")}
+          >
+            Work
+          </button>
         </div>
 
         {/* Menu Toggle Button */}

@@ -5,12 +5,10 @@
 :root {
   --background: #caf0f8;
   --foreground: #90e0ef;
-  --text: #fff; 
+  --text: #fff;
   --text-foreground: #00b4d8;
   --primary: #03045e;
   --secondary: #0077b6;
-  --font-qwitcher-grypen: "Qwitcher Grypen", cursive;
-  --font-jacques-francois-shadow: "Jacques Francois Shadow", serif;
 }
 
 body {
@@ -18,13 +16,19 @@ body {
   background-color: var(--background);
   color: var(--text);
 }
+
 .font-qwitcher {
-  font-family: var(--font-qwitcher-grypen);
+  font-family: var(--font-body);
 }
 
-.font-jacques {
-  font-family: var(--font-jacques-francois-shadow);
+.font-header {
+  font-family: var(--font-header);
 }
+
+h1 {
+  font-family: var(--font-header);
+}
+
 .gradient-border {
   background: linear-gradient(
     0deg,

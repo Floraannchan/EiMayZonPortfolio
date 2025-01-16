@@ -1,17 +1,16 @@
-import { Qwitcher_Grypen } from "next/font/google";
-import { Jacques_Francois_Shadow } from "next/font/google";
+import { Montserrat, Qwitcher_Grypen } from "next/font/google";
 import "./globals.css";
 
 const qwitcherGrypen = Qwitcher_Grypen({
   subsets: ["latin"],
   weight: ["400", "700"],
-  variable: "--font-qwitcher-grypen",
+  variable: "--font-body",
 });
 
-const jacquesFrancoisShadow = Jacques_Francois_Shadow({
+const montserret = Montserrat({
   subsets: ["latin"],
   weight: ["400"],
-  variable: "--font-jacques-francois-shadow",
+  variable: "--font-header",
 });
 
 export const metadata = {
@@ -27,7 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${qwitcherGrypen.variable} ${jacquesFrancoisShadow.variable} antialiased`}
+        className={`${qwitcherGrypen.variable} ${montserret.variable} antialiased`}
       >
         {children}
       </body>

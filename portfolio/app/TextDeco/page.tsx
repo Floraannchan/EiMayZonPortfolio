@@ -9,9 +9,9 @@ const FlipLink = ({ children }: { children: string }) => {
     <motion.a
       initial="initial"
       whileHover="hovered"
-      className="relative block overflow-hidden whitespace-nowrap text-4xl uppercase sm:text-5xl md:text-6xl lg:text-7xl lg:mb-18 mb-8"
+      className="relative block overflow-hidden whitespace-nowrap text-4xl uppercase sm:text-5xl font-bold md:text-6xl lg:text-7xl mb-4 mt-8"
       style={{
-        lineHeight: 1.5,
+        lineHeight: 1,
       }}
       suppressHydrationWarning={true}
     >
