@@ -1,11 +1,10 @@
-"use client";
-
-import { useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import FlipLink from "../TextDeco/page";
 import { motion, useTransform, useScroll } from "framer-motion";
 import Projects from "../projects/page";
 import { fadeIn } from "../variants";
+import Allprojects from "../Allprojects/page";
 
 interface EducationItem {
   id: number;
@@ -28,11 +27,29 @@ interface EducationItem {
 }
 
 export default function Education() {
+  const [isSmallScreen, setIsSmallScreen] = useState(false); // Track screen size
   const container = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: container,
     offset: ["start start", "end end"],
   });
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsSmallScreen(window.innerWidth < 768); // Consider screen width below 768px as small
+    };
+
+    // Initial check
+    handleResize();
+
+    // Event listener for window resizing
+    window.addEventListener("resize", handleResize);
+
+    // Cleanup
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   const educationData: EducationItem[] = [
     {
@@ -158,9 +175,7 @@ export default function Education() {
           {educationData.map((item, index) => renderEducationItem(item, index))}
         </div>
       </div>
-      <div>
-        <Projects />
-      </div>
+      {isSmallScreen ? <Allprojects /> : <Projects />}
     </div>
   );
 }

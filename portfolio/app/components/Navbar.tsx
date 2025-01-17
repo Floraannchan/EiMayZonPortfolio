@@ -33,7 +33,6 @@ export default function NavBar() {
       }}
     >
       <div className="flex justify-between p-4">
-        {/* Profile Section */}
         <div>
           <h1 className="text-[24px] font-bold text-text_primay">EI MAY ZON</h1>
           <p className="text-[14px] text-foreground bg-primary text-center ">
@@ -41,9 +40,8 @@ export default function NavBar() {
           </p>
         </div>
 
-        {/* Desktop Navigation Buttons */}
         <div className="hidden md:flex w-[160px] h-[50px] bg-foreground rounded-full justify-around items-center">
-          <Link href="/components/Home">
+          <Link href="/Home">
             <button
               className={`text-white text-[20px] px-4 py-1.5 rounded-full ${
                 activeButton === "info" ? "bg-primary" : ""
@@ -53,26 +51,25 @@ export default function NavBar() {
               Info
             </button>
           </Link>
-          <Link href="/allprojects"></Link>
-          <button
-            className={`text-white text-[20px] px-4 py-1.5 rounded-full ${
-              activeButton === "work" ? "bg-primary" : ""
-            }`}
-            onClick={() => setActiveButton("work")}
-          >
-            Work
-          </button>
+          <Link href="/Allprojects">
+            <button
+              className={`text-white text-[20px] px-4 py-1.5 rounded-full ${
+                activeButton === "work" ? "bg-primary" : ""
+              }`}
+              onClick={() => setActiveButton("work")}
+            >
+              Work
+            </button>
+          </Link>
         </div>
-
-        {/* Menu Toggle Button */}
         <div
-          className="w-[70px] h-[70px] rounded-full bg-foreground flex justify-center items-center cursor-pointer"
+          className="w-[60px] h-[60px] rounded-full bg-foreground flex justify-center items-center cursor-pointer"
           onClick={() => setToggle(!toggle)}
         >
           {toggle ? (
-            <GiTireIronCross className="size-8 text-primary" />
+            <GiTireIronCross className="size-6 text-primary" />
           ) : (
-            <TiThMenuOutline className="size-8 text-primary" />
+            <TiThMenuOutline className="size-6 text-primary" />
           )}
         </div>
       </div>
@@ -88,28 +85,36 @@ export default function NavBar() {
             exit="closed"
           >
             <div className="flex flex-col p-4 space-y-3">
-              <button
-                className={`text-white text-[20px] px-4 py-2 rounded-full w-full text-left ${
-                  activeButton === "info" ? "bg-primary" : "hover:bg-primary/50"
-                }`}
-                onClick={() => {
-                  setActiveButton("info");
-                  setToggle(false);
-                }}
-              >
-                Info
-              </button>
-              <button
-                className={`text-white text-[20px] px-4 py-2 rounded-full w-full text-left ${
-                  activeButton === "work" ? "bg-primary" : "hover:bg-primary/50"
-                }`}
-                onClick={() => {
-                  setActiveButton("work");
-                  setToggle(false);
-                }}
-              >
-                Work
-              </button>
+              <Link href="/Home">
+                <button
+                  className={`text-white text-[20px] px-4 py-2 rounded-full w-full text-left ${
+                    activeButton === "info"
+                      ? "bg-primary"
+                      : "hover:bg-primary/50"
+                  }`}
+                  onClick={() => {
+                    setActiveButton("info");
+                    setToggle(false);
+                  }}
+                >
+                  Info
+                </button>
+              </Link>
+              <Link href="/Allprojects">
+                <button
+                  className={`text-white text-[20px] px-4 py-2 rounded-full w-full text-left ${
+                    activeButton === "work"
+                      ? "bg-primary"
+                      : "hover:bg-primary/50"
+                  }`}
+                  onClick={() => {
+                    setActiveButton("work");
+                    setToggle(false);
+                  }}
+                >
+                  Work
+                </button>
+              </Link>
             </div>
           </motion.div>
         )}

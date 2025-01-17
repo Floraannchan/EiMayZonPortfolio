@@ -17,13 +17,13 @@ export default function AboutMe() {
 
         <div className="flex justify-between  gap-14 flex-col">
           <motion.div
-            className="w-1/2 "
+            className=""
             variants={fadeIn("left", 0.5)}
             initial="hidden"
             whileInView="show"
           >
             <p
-              className="text-xl lg:text-2xl leading-relaxed text-primary indent-1 mt-11 
+              className="text-xl lg:text-2xl leading-relaxed text-primary md:indent-1 mt-11 
             "
             >
               I’m a passionate{" "}

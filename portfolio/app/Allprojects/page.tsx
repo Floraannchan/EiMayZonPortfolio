@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import FlipLink from "../TextDeco/page";
-import { FaPaintBrush, FaReact } from "react-icons/fa"; // For next-theme representation
+import { FaPaintBrush, FaReact } from "react-icons/fa";
 import { FaHtml5, FaCss3Alt, FaJs } from "react-icons/fa";
 import {
   SiNextdotjs,
@@ -17,13 +17,19 @@ import { fadeIn } from "../variants";
 
 export default function Allprojects() {
   const router = useRouter();
+
   const handleClickToHome = () => {
     router.push("/Home");
   };
+
+  const handleGitHubRedirect = (url: string) => {
+    window.open(url, "_blank");
+  };
+
   return (
     <div>
       <motion.div
-        className="flex  items-center p-8"
+        className="flex items-center p-8"
         variants={fadeIn("down", 0.5)}
         initial="hidden"
         whileInView="show"
@@ -38,7 +44,7 @@ export default function Allprojects() {
       </motion.div>
 
       <motion.div
-        className="bg-primary w-full  flex justify-center items-center gap-16 flex-col md:flex-row p-16"
+        className="bg-primary w-full flex justify-center items-center gap-16 flex-col md:flex-row p-16"
         variants={fadeIn("right", 0.5)}
         initial="hidden"
         whileInView="show"
@@ -51,7 +57,7 @@ export default function Allprojects() {
             height={400}
           />
         </div>
-        <div className=" h-[220px] ">
+        <div className="h-[220px]">
           <h1 className="text-4xl">Resume Builder</h1>
           <p className="text-gray-400">
             Easy to create resume with selected template
@@ -67,13 +73,21 @@ export default function Allprojects() {
               <FaJs title="JavaScript" className="text-black" />
             </div>
           </div>
-          <button className="bg-background text-primary px-8 py-2 rounded-md mt-8 ">
+          <button
+            className="bg-background text-primary px-8 py-2 rounded-md mt-8 mb-8"
+            onClick={() =>
+              handleGitHubRedirect(
+                "https://github.com/Floraannchan/ResumeBuilder.git"
+              )
+            }
+          >
             See More
           </button>
         </div>
       </motion.div>
+
       <motion.div
-        className="bg-secondary w-full  flex justify-center items-center gap-16 flex-col md:flex-row-reverse p-16 "
+        className="bg-secondary w-full flex justify-center items-center gap-16 flex-col md:flex-row-reverse p-16"
         variants={fadeIn("left", 0.5)}
         initial="hidden"
         whileInView="show"
@@ -86,7 +100,7 @@ export default function Allprojects() {
             height={400}
           />
         </div>
-        <div className=" h-[220px] ">
+        <div className="h-[220px]">
           <h1 className="text-4xl">Ebook library</h1>
           <p className="text-gray-400">Free online books</p>
           <div className="flex gap-4 mt-8 text-2xl">
@@ -103,13 +117,21 @@ export default function Allprojects() {
               <FaPaintBrush title="Next-Theme" className="text-white" />
             </div>
           </div>
-          <button className="bg-background text-primary px-8 py-2 rounded-md mt-8 ">
+          <button
+            className="bg-background text-primary px-8 py-2 rounded-md mt-8"
+            onClick={() =>
+              handleGitHubRedirect(
+                "https://github.com/Floraannchan/ebooklibrary"
+              )
+            }
+          >
             See More
           </button>
         </div>
       </motion.div>
+
       <motion.div
-        className="bg-text_primay w-full  flex justify-center items-center gap-16 flex-col md:flex-row p-16"
+        className="bg-text_primay w-full flex justify-center items-center gap-16 flex-col md:flex-row p-16"
         variants={fadeIn("right", 0.5)}
         initial="hidden"
         whileInView="show"
@@ -122,9 +144,9 @@ export default function Allprojects() {
             height={400}
           />
         </div>
-        <div className=" h-[220px] ">
+        <div className="h-[220px]">
           <h1 className="text-4xl">Business Online Shop</h1>
-          <p className="text-gray-100">mini ecomerence</p>
+          <p className="text-gray-100">Mini eCommerce</p>
           <div className="flex gap-4 mt-8 text-2xl">
             <div className="p-2 rounded-full bg-[#61DAFB]">
               <FaReact title="React" className="text-black" />
@@ -132,7 +154,6 @@ export default function Allprojects() {
             <div className="p-2 rounded-full bg-[#38B2AC]">
               <SiTailwindcss title="Tailwind CSS" className="text-white" />
             </div>
-
             <div className="p-2 rounded-full bg-[#764ABC]">
               <SiRedux title="Redux Toolkit" className="text-white" />
             </div>
@@ -140,7 +161,14 @@ export default function Allprojects() {
               <SiFigma title="Figma" className="text-white" />
             </div>
           </div>
-          <button className="bg-background text-primary px-8 py-2 rounded-md mt-8 ">
+          <button
+            className="bg-background text-primary px-8 py-2 rounded-md mt-8"
+            onClick={() =>
+              handleGitHubRedirect(
+                "https://github.com/Floraannchan/YourBuddyOnlineShop.git"
+              )
+            }
+          >
             See More
           </button>
         </div>

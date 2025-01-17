@@ -35,7 +35,7 @@ export default function Hero() {
       <div>
         <NavBar />
       </div>
-      <div className="flex gap-4 md:justify-between lg:mt-24 flex-col md:flex-row mt-20 h-screen bg-background">
+      <div className="flex gap-4 md:justify-between lg:mt-24 flex-col md:flex-row  h-screen bg-background">
         <div>
           <motion.div
             variants={transformVariant}
@@ -62,7 +62,7 @@ export default function Hero() {
             }}
             className="mb-0"
           >
-            <p className="text-primary text-[16px] lg:text-[22px] mt-32">
+            <p className="text-primary text-[16px] lg:text-[22px] ">
               I build sleek, modern websites tailored to your needs.
             </p>
           </motion.div>
